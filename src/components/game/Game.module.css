@@ -1,0 +1,52 @@
+.container {
+	margin-top: 30px;
+	width: 100%;
+	text-align: center;
+}
+
+.songInfo {
+	padding-bottom: 20px;
+	font-size: 0.8em;
+}
+
+.artist, .song, .content {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	white-space: pre-line;
+}
+
+.artist span, .song span, .content span {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.playerName {
+	font-size: 1.8em;
+	color: #072f08;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.answersWrapper {
+	margin-bottom: 30px;
+}
+
+.answersWrapper button {
+	margin: 5px;
+	background-color: #072f08;
+	color: whitesmoke;
+	border: none;
+	padding: 4px 8px;
+	cursor: pointer;
+}
+
+.nextPlayer {
+	width: 300px;
+	height: 40px;
+	background-color: #072f08;
+	color: #a3de85;
+	border-radius: 10px;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
