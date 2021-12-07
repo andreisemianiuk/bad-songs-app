@@ -27,8 +27,10 @@ function App() {
   
   return (
     <div className="App">
-      <h1 className={'App-title'}>Bad Songs</h1>
-      <img className={'App-logo'} src={logo} alt={'bad-songs-logo'}/>
+      <div>
+        <h1 className={'App-title'}>Bad Songs</h1>
+        <img className={'App-logo'} src={logo} alt={'bad-songs-logo'}/>
+      </div>
       {
         isOpenGame ?
           isOpenSettings
@@ -36,7 +38,7 @@ function App() {
             : <Game startGame={() => setIsOpenGame(false)}/>
           : <div className={'App-button'}>
             {(gameNumber + 1) * 10 < countOfSongs
-              ? <button onClick={startGame}>Start Game</button>
+              ? <button onClick={startGame} className={'App-button-start'}>Начать игру</button>
               : <h3 className={'App-warning'}>Пожалуйста, обновите игру!</h3>
             }
           </div>

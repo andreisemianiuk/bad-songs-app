@@ -11,7 +11,7 @@ type GameType = {
   startGame: () => void
 }
 
-export const Game = ({startGame}:GameType) => {
+export const Game = ({startGame}: GameType) => {
   const dispatch = useDispatch()
   const [queue, setQueue] = useState<0 | 1>(0)
   const [isGivenAnswer, setIsGivenAnswer] = useState<boolean>(false)
@@ -38,8 +38,8 @@ export const Game = ({startGame}:GameType) => {
         ? (<div className={styles.container}>
           {
             !queue
-            ? <PlayerDashboard number={0}/>
-            : <PlayerDashboard number={1}/>
+              ? <PlayerDashboard number={0}/>
+              : <PlayerDashboard number={1}/>
           }
           <div className={styles.songInfo}>
             <div className={styles.artist}>
@@ -49,8 +49,12 @@ export const Game = ({startGame}:GameType) => {
               <span>{songs?.songTitle || ''}</span>
             </div>
             <div className={styles.hint}>
-              Не помнишь мотив песни?<br/>
-              Здесь напоминание <a href={`${songs?.youtubeRef ? songs.youtubeRef : ''}`} target={'_blank'}>{songs?.youtubeRef ? songs.youtubeRef : ''}</a>
+              Не помнишь мотив песни?Здесь напоминание<br/>
+              <a href={`${songs?.youtubeRef ? songs.youtubeRef : ''}`}
+                 target={'_blank'}
+                 rel={'noreferrer'}>
+                {songs?.youtubeRef ? songs.youtubeRef : ''}
+              </a>
             </div>
             <div className={styles.content}>
               Слова песни:<br/><span>{songs?.content ? songs.content : ''}</span>
@@ -58,19 +62,35 @@ export const Game = ({startGame}:GameType) => {
           </div>
           {
             !isGivenAnswer
-            ? <div className={styles.answersWrapper}>
-              Соперник засмеялся?
-              <button onClick={() => evaluateAnswer(true)}>Да</button>
-              <button onClick={() => evaluateAnswer(false)}>Нет</button>
-            </div>
-            : <button onClick={goToNextPlayer} className={styles.nextPlayer}>Следующий игрок</button>
+              ? <div className={styles.answersWrapper}>
+                Соперник засмеялся?
+                <button onClick={() => evaluateAnswer(true)}>Да</button>
+                <button onClick={() => evaluateAnswer(false)}>Нет</button>
+              </div>
+              : <div className={styles.nextPlayerWrapper}>
+                <button onClick={goToNextPlayer} className={styles.nextPlayer}>
+                  Нажимает следующий игрок
+                </button>
+              </div>
           }
         </div>)
-        : (<div>
-          <div>Счет {`${players.names[0].name} - ${players.names[0].points} ${players.names[1].name} - ${players.names[1].points}`}</div>
-          <div onClick={startNewGame}>
-            Следующая игра
+        : (<div className={styles.resultsContainer}>
+          <div className={styles.results}>
+            <div className={styles.resultsTitle}>Счет игры</div>
+            <div className={styles.resultsInfo}>
+              <span className={styles.resultsItem}>
+              <div className={styles.resultsName}>{`${players.names[0].name}`}</div>
+              <div className={styles.resultsValue}>{`${players.names[0].points}`}</div>
+            </span>
+              <span className={styles.resultsItem}>
+              <div className={styles.resultsName}>{`${players.names[1].name}`}</div>
+              <div className={styles.resultsValue}>{`${players.names[1].points}`}</div>
+            </span>
+            </div>
           </div>
+          <button onClick={startNewGame} className={styles.nextPlayer}>
+            Новая игра
+          </button>
         </div>)
       }
     </>

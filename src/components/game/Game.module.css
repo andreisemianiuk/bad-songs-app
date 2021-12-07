@@ -1,23 +1,29 @@
 .container {
-	margin-top: 30px;
 	width: 100%;
 	text-align: center;
 }
 
 .songInfo {
 	padding-bottom: 20px;
-	font-size: 0.8em;
+	/*font-size: 0.7em;*/
 }
-
-.artist, .song, .content {
-	margin-bottom: 10px;
-	margin-top: 10px;
+.content {
+	margin: 5px 0;
 	white-space: pre-line;
 }
 
+.artist, .song {
+	margin: 5px 0;
+	font-size: 1em;
+}
+
 .artist span, .song span, .content span {
-	font-size: 1.5em;
+	font-size: 1.3em;
 	font-weight: bold;
+}
+
+.hint {
+	font-size: .7em;
 }
 
 .playerName {
@@ -25,10 +31,11 @@
 	color: #072f08;
 	text-transform: uppercase;
 	font-weight: bold;
+	margin-bottom: 20px;
 }
 
 .answersWrapper {
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
 
 .answersWrapper button {
@@ -40,13 +47,62 @@
 	cursor: pointer;
 }
 
+.nextPlayerWrapper {
+	margin-bottom: 30px;
+}
+
 .nextPlayer {
-	width: 300px;
-	height: 40px;
+	width: 270px;
+	height: 30px;
 	background-color: #072f08;
 	color: #a3de85;
 	border-radius: 10px;
-	font-size: 1.5em;
 	text-transform: uppercase;
+}
+
+.resultsContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	/*height: 150px;*/
+	padding-bottom: 50px;
+}
+
+.results {
+color: #072f08;
+	margin-bottom: 80px;
+}
+
+.resultsTitle {
+	font-size: 1.5em;
+	text-align: center;
 	margin-bottom: 30px;
+	text-transform: lowercase;
+}
+
+.resultsInfo {
+	display: flex;
+	justify-content: space-between;
+	width: 250px;
+}
+
+.resultsItem {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+	/*font-size: 2em;*/
+}
+
+.resultsName {
+	font-size: 1.5em;
+	text-transform: capitalize;
+	font-style: italic;
+}
+
+.resultsValue {
+	font-size: 2em;
+	font-weight: bold;
 }
