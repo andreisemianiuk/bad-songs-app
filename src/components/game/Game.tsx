@@ -46,7 +46,7 @@ export const Game = ({startGame}: GameType) => {
               <span>{songs?.artist ? songs.artist : ''}</span>
             </div>
             <div className={styles.song}>
-              <span>{songs?.songTitle || ''}</span>
+              <span>{`"${songs?.songTitle}"` || ''}</span>
             </div>
             <div className={styles.hint}>
               Не помнишь мотив песни?Здесь напоминание<br/>
@@ -63,13 +63,13 @@ export const Game = ({startGame}: GameType) => {
           {
             !isGivenAnswer
               ? <div className={styles.answersWrapper}>
-                Соперник засмеялся?
+                <span className={styles.question}>Соперник засмеялся?</span><br/>
                 <button onClick={() => evaluateAnswer(true)}>Да</button>
                 <button onClick={() => evaluateAnswer(false)}>Нет</button>
               </div>
               : <div className={styles.nextPlayerWrapper}>
                 <button onClick={goToNextPlayer} className={styles.nextPlayer}>
-                  Нажимает следующий игрок
+                  Следующий игрок
                 </button>
               </div>
           }

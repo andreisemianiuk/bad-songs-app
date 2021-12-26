@@ -2,7 +2,25 @@
 	display: flex;
 	justify-content: center;
 	height: 100px;
-	margin-bottom: 100px;
+	padding-bottom: 180px;
+}
+
+.errorContainer {
+	min-height: 50px;
+	width: 270px;
+	font-size: 1.1em;
+	color: whitesmoke;
+	margin: 0 auto 10px;
+	text-align: center;
+}
+
+.errorBackgroundColor {
+	background-color: red;
+}
+
+.errorInput {
+	color: whitesmoke;
+	background-color: red;
 }
 
 .inputsContainer {
@@ -17,7 +35,7 @@
 	height: 20px;
 	padding: 10px;
 	margin-bottom: 10px;
-	border-color: inherit;
+	border-color: #a3de85;
 	border-radius: 10px;
 	outline: none;
 }
@@ -25,7 +43,7 @@
 .buttonWrapper {
 	display: flex;
 	justify-content: center;
-	margin-top: 20px;
+	margin-top: 40px;
 }
 
 .button {
@@ -36,7 +54,7 @@
 	text-transform: uppercase;
 	background-color: #072f08;
 	outline: none;
-	border: none;
+	border-color:#072f08;
 	border-radius: 10px;
 	cursor: pointer;
 }

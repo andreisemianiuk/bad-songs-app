@@ -27,10 +27,10 @@ function App() {
   
   return (
     <div className="App">
-      <div>
-        <h1 className={'App-title'}>Bad Songs</h1>
+      <h1 className={'App-title'}>Bad Songs</h1>
+      {!isOpenGame && <div>
         <img className={'App-logo'} src={logo} alt={'bad-songs-logo'}/>
-      </div>
+      </div>}
       {
         isOpenGame ?
           isOpenSettings
